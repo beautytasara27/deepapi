@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="static/styler.css">
+
+	<title>File Upload</title>
+</head>
+<body>
+	<div class="file__upload">
+		<div class="header">
+			<p><i class="fa fa-cloud-upload fa-2x"></i><span><span>up</span>load</span></p>
+		</div>
+		<form method=post enctype=multipart/form-data class="body">
+			<input type="file" id="upload" name="file">
+			<label for="upload">
+				<i class="fa fa-file-text-o fa-3x"></i>
+				<p>
+					<strong>Browse</strong> files here
+
+				</p>
+                <p></p>
+			</label>
+            <input class="button-41" type=submit value=Upload>
+		</form>
+	</div>
+</body>
+</html>
