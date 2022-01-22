@@ -1,7 +1,4 @@
-import os
-from flask import Flask, request, redirect, url_for, jsonify, Response, render_template
-from werkzeug.utils import secure_filename
-import pickle
+from flask import Flask, request, jsonify, render_template
 from keras.applications.vgg16 import preprocess_input
 from keras.preprocessing import image
 import numpy as np
@@ -37,7 +34,7 @@ def upload_file():
             img_requested = request.files['file'].read()
             img = Image.open(io.BytesIO(img_requested))
             if img.mode != 'RGB':
-                img = img.convert('RGB')
+               img = img.convert('RGB')
             img = img.resize((224, 224))
             img = image.img_to_array(img)
             img = np.expand_dims(img, axis=0)
