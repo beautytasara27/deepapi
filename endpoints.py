@@ -14,7 +14,7 @@ classes = ["ApplesGradeA", "ApplesGradeB", "ApplesGradeC", "BananaGradeA", "Bana
            "OrangesGradeA", "OrangesGradeB", "OrangesGradeC", "PomegranateGradeA", "PomegranateGradeB", "PomegranateGradeC"]
 def load_model():
     global model
-    model = keras.models.load_model("D:/Thesis/Models/vgg/saved_vggs/saved_vggs/vgg_model11")
+    model = keras.models.load_model("vgg_model11")
 
 def preprocess(img):
     if  img.mode != 'RGB':
