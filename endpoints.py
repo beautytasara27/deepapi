@@ -12,7 +12,7 @@ classes = ["ApplesGradeA", "ApplesGradeB", "ApplesGradeC", "BananaGradeA", "Bana
            "OrangesGradeA", "OrangesGradeB", "OrangesGradeC", "PomegranateGradeA", "PomegranateGradeB", "PomegranateGradeC"]
 def load_model():
     global model
-    model = tf.keras.models.load_model("vgg_model11")
+    model = tf.keras.models.load_model("/home/madonnacarter1/saved_models/goodbad_model")
 
 def preprocess(img):
     if  img.mode != 'RGB':
