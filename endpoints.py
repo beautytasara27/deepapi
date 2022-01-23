@@ -5,13 +5,14 @@ import numpy as np
 from PIL import Image
 import io
 import keras
+import tensorflow as tf
 app = Flask(__name__)
 model = None
 classes = ["ApplesGradeA", "ApplesGradeB", "ApplesGradeC", "BananaGradeA", "BananaGradeA", "BananaGradeC", "LimeGradeA", "LimeGradeB", "LimeGradeC",
            "OrangesGradeA", "OrangesGradeB", "OrangesGradeC", "PomegranateGradeA", "PomegranateGradeB", "PomegranateGradeC"]
 def load_model():
     global model
-    model = keras.models.load_model("vgg_model11")
+    model = tf.keras.models.load_model("vgg_model11")
 
 def preprocess(img):
     if  img.mode != 'RGB':
