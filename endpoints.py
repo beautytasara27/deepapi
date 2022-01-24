@@ -40,7 +40,8 @@ def upload_file():
             img = image.img_to_array(img)
             img = np.expand_dims(img, axis=0)
             inputs = preprocess_input(img)
-
+            if model == None:
+                load_model()
             preds = model.predict(inputs)
 
             print("preds", preds)
@@ -69,7 +70,8 @@ def get_probabilities():
             img = image.img_to_array(img)
             img = np.expand_dims(img, axis=0)
             inputs = preprocess_input(img)
-
+            if model == None:
+                load_model()
             preds = model.predict(inputs)
 
             print("preds", preds)
