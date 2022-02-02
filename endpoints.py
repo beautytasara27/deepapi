@@ -8,7 +8,7 @@ import io
 import tensorflow as tf
 app = Flask(__name__)
 model = None
-classes = ["ApplesGradeA", "ApplesGradeB", "ApplesGradeC", "BananaGradeA", "BananaGradeC", "BananaGradeC", "LimeGradeA", "LimeGradeB", "LimeGradeC",
+classes = ["ApplesGradeA", "ApplesGradeB", "ApplesGradeC", "BananaGradeA", "BananaGradeB", "BananaGradeC", "LimeGradeA", "LimeGradeB", "LimeGradeC",
            "OrangesGradeA", "OrangesGradeB", "OrangesGradeC", "PomegranateGradeA", "PomegranateGradeB", "PomegranateGradeC"]
 def load_model():
     global model
