@@ -102,6 +102,7 @@ def get_probabilities():
 
     return render_template('upload.html')
 if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5500)
     load_model()
     # no-thread: https://github.com/keras-team/keras/issues/2397#issuecomment-377914683
     # avoid model.predict runs before model initiated
