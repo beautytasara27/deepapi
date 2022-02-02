@@ -8,11 +8,11 @@ import keras
 import tensorflow as tf
 app = Flask(__name__)
 model = None
-classes = ["ApplesGradeA", "ApplesGradeB", "ApplesGradeC", "BananaGradeA", "BananaGradeA", "BananaGradeC", "LimeGradeA", "LimeGradeB", "LimeGradeC",
+classes = ["ApplesGradeA", "ApplesGradeB", "ApplesGradeC", "BananaGradeA", "BananaGradeC", "BananaGradeC", "LimeGradeA", "LimeGradeB", "LimeGradeC",
            "OrangesGradeA", "OrangesGradeB", "OrangesGradeC", "PomegranateGradeA", "PomegranateGradeB", "PomegranateGradeC"]
 def load_model():
     global model
-    model = tf.keras.models.load_model("/home/madonnacarter1/saved_models/vgg_modelFinal")
+    model = tf.keras.models.load_model("/home/madonnacarter1/models/vgg_modelFinale2.h5")
 
 def preprocess(img):
     if  img.mode != 'RGB':
