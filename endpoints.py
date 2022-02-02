@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify, render_template
-from keras.applications.vgg16 import preprocess_input
-from keras.preprocessing import image
+from tensorflow.keras.applications.vgg16 import preprocess_input
+from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image
 import io
-import keras
+
 import tensorflow as tf
 app = Flask(__name__)
 model = None
