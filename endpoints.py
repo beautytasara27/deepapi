@@ -4,7 +4,7 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image
 import io
-
+import time
 import tensorflow as tf
 app = Flask(__name__)
 model = None
@@ -12,7 +12,7 @@ classes = ["ApplesGradeA", "ApplesGradeB", "ApplesGradeC", "BananaGradeA", "Bana
            "OrangesGradeA", "OrangesGradeB", "OrangesGradeC", "PomegranateGradeA", "PomegranateGradeB", "PomegranateGradeC"]
 def load_model():
     global model
-    model = tf.keras.models.load_model("/home/madonnacarter1/models/vgg_modelFinale2.h5")
+    model = tf.keras.models.load_model("/home/madonnacarter1/models/vgg_modelFinale2.h5")#/home/madonnacarter1/models/vgg_modelFinale2.h5
 
 def preprocess(img):
     if  img.mode != 'RGB':
@@ -29,6 +29,7 @@ def index_page():
 @app.route('/predict', methods=['GET', 'POST'])
 def upload_file():
     global classes
+    time_elapsed = 0
     response = {'success': False}
     if request.method == 'POST':
         if request.files.get('file'): # image is stored as name "file"
@@ -42,9 +43,16 @@ def upload_file():
             inputs = preprocess_input(img)
             if model == None:
                 load_model()
-            preds = model.predict(inputs)
-
-            print("preds", preds)
+            count = 0
+            while count < 3000:
+                start = time.time()
+                preds = model.predict(inputs)
+                end = time.time()
+                pred_time = end-start
+                time_elapsed += pred_time
+                count +=1
+            print("time",time_elapsed/3000)
+            #print("preds", preds)
             index = np.argmax(preds, axis=1)
             print(index[0])
             print(classes[index[0]])
